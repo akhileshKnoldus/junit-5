@@ -2,12 +2,30 @@ package com.techmind;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class MathUtilsTest {
 
 	MathUtils mathUtils;
+	
+	@BeforeAll
+	static void beforeAllInit() {
+		System.out.println("This method run before all");
+	}
+	
+	@BeforeEach
+	void init() {
+		mathUtils = new MathUtils();
+	}
+	
+	@AfterEach
+	void cleanup() {
+		System.out.println("Cleaning up....");
+	}
 	
 	@Test
 	@DisplayName("Addition for two number")
@@ -35,7 +53,7 @@ class MathUtilsTest {
 
 	@Test
 	void testDivide() {
-		assertThrows(ArithmeticException.class, ()->mathUtils.divide(1, 0),"Divide by zero should throw Error");
+		assertThrows(ArithmeticException.class, ()->mathUtils.divide(1, 1),"Divide by zero should throw Error");
 	}
 	
 
