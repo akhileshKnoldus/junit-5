@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -43,17 +44,22 @@ class MathUtilsTest {
 	}
 	
 	@Test
+	@Disabled
+	@DisplayName("Substarct of two nos.")
 	void testSubtract() {
 	}
 
 	
 	@Test
+	@Disabled
+	@DisplayName("Multiply of two nos.")
 	void testMultiply() {
 	}
 
 	@Test
+	@DisplayName("Divide of two nos.")
 	void testDivide() {
-		assertThrows(ArithmeticException.class, ()->mathUtils.divide(1, 1),"Divide by zero should throw Error");
+		assertThrows(ArithmeticException.class, ()->mathUtils.divide(1, 0),"Divide by zero should throw Error");
 	}
 	
 
