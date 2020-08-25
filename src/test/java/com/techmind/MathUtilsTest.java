@@ -33,14 +33,14 @@ class MathUtilsTest {
 	void testAddIntInt() {
 		int firstNum = 10;
 		int secondNum = 20;
-		assertEquals(MathUtils.add(firstNum, secondNum), 30 , "This method is should be add two numbers");
+		assertEquals(30 ,MathUtils.add(firstNum, secondNum),  "This method is should be add two numbers");
 	}
 
 	@Test
 	@DisplayName("Addition for an array")
 	void testAddIntArray() {
 		int[] arr = new int[] {1,2,3,4,5,6,7,8,9,10};
-		assertEquals(MathUtils.add(arr), 55 ,"Addition of an array");
+		assertEquals(55 ,MathUtils.add(arr) ,"Addition of an array");
 	}
 	
 	@Test
@@ -51,9 +51,13 @@ class MathUtilsTest {
 
 	
 	@Test
-	@Disabled
 	@DisplayName("Multiply of two nos.")
 	void testMultiply() {
+		assertAll(
+				() -> assertEquals(0, mathUtils.multiply(1, 0), "Output of multiply should be 0"),
+				() -> assertEquals(1, mathUtils.multiply(1, 1), "Output of multiply should be 1"),
+				() -> assertEquals(6, mathUtils.multiply(2, 3), "Output of multiply should be 6")
+				);
 	}
 
 	@Test
